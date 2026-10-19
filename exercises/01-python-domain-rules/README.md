@@ -20,6 +20,8 @@ Python **3.14.6** was available when this workspace was created. Confirm your cu
 
 ## Your task
 
+Begin with the small prerequisite lesson and reading task in the [dashboard](../../learning/PROGRESS.md). Ask for syntax as needed. Documentation lookup is allowed; the aim is to understand, change, and verify behavior.
+
 Create `checkout.py` in this exercise directory. Implement this interface; the body is yours:
 
 ```python
@@ -74,6 +76,12 @@ After the code works, answer these in your own words:
 4. If two servers both start with an empty loan map, can this function alone guarantee one borrower across both servers? Explain without implementing a database solution yet.
 
 You are done when the checks pass, you can explain these answers, and you can change one rule without copying a solution. Share the code and actual command output for review.
+
+## Feedback and next steps
+
+The review records concepts, code reading, implementation/testing, and documentation use separately. Include hints or worked solutions used; syntax lookup is normal. Check a changed case and revisit the rule later rather than equate one passing run with lasting mastery.
+
+Attempts, quiz answers, feedback, and retries go into [history](../../learning/HISTORY.md). Evidence and review triggers go into the [concept queue](../../learning/CONCEPTS.md); the dashboard gets one next action based on the result. See the dashboard for the current assessment status.
 
 ## Optional follow-up
 

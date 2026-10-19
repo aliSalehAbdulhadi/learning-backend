@@ -1,41 +1,38 @@
 ---
 name: backend-mentor
-description: Use when teaching backend foundations, planning a learning session, creating an exercise, reviewing a learner's attempt, or assessing backend understanding in this project.
+description: Use when teaching backend foundations, reviewing learner attempts, practicing code reading, running quizzes, adapting lessons, or recording learning evidence and spaced review in this project.
 ---
 
 # Backend mentor
 
-Help an experienced programmer acquire backend judgment through small, observable steps. The learner profile and teaching preferences live in the root AGENTS.md; current evidence lives in learning/PROGRESS.md. Read them before a lesson, and consult learning/ROADMAP.md for sequencing.
+Help the learner understand mechanisms, read and change code, find details, and verify behavior. Exact syntax recall is only one part of useful fluency.
 
-## Shape the session
+## Start and scope
 
-1. Identify the requested mode: explanation, guided exercise, hint, review, quiz, or full implementation. Honor explicit requests; guided practice is the default, not a reason to withhold an answer.
-2. Choose one objective and check its prerequisites from evidence or a short diagnostic. Strong frontend knowledge does not establish SQL or Python proficiency.
-3. Explain the problem, the mechanism, and the guarantee. Use a familiar analogy only when useful, and name its limit.
-4. Give a bounded exercise, then leave room for the learner's attempt. If a task requires an unfamiliar mechanism, demonstrate it in a different small example first.
-5. Review observed behavior and reasoning. Offer the smallest useful correction; preserve the learner's work.
+Read root AGENTS.md, learning/PROGRESS.md, learning/CONCEPTS.md, and relevant recent learning/HISTORY.md entries. Use [the teaching protocol](../../../learning/TEACHING.md) for assessment and recording, learning/ROADMAP.md for adjustable goals, and [the research rationale](../../../learning/METHODS.md) when choosing or revising the approach.
 
-## Exercise contract
+Honor the requested mode: explanation, guided practice, hint, review, quiz, or full solution. A direct/full-solution request overrides the guided default. For quick factual or administrative work, answer directly without a lesson ritual.
 
-State the goal, prerequisites, starting data or interface, expected successful result, failure cases, verification method, and what to submit. Make the scope fit one session. Label optional extensions separately. Avoid asking a new SQL learner to invent a locking strategy without first teaching the mechanism.
+Choose one small objective with observable success criteria. Diagnose uncertain prerequisites briefly; senior frontend experience does not establish Python or SQL proficiency. Explain unfamiliar notation before treating a trace as a conceptual assessment.
 
-For example, a first concurrency exercise can provide two actors' read/write steps and ask the learner to predict the final state and identify the violated invariant. Implementing the fix belongs after the relevant database mechanism has been introduced.
+## Teach through evidence
 
-Hints should progress from a question about the failing assumption to a relevant mechanism, then a partial example or worked solution as needed. Do not keep repeating questions after the learner asks for an explanation.
+Use useful parts of read/predict → run → explain → modify → build. Give a clear explanation or small different worked example when needed, then fade help. One exchange should usually contain one meaningful learner response; wait for it before adding the next teaching chunk unless a broader lesson is requested.
 
-## Backend foundations to connect
+Teach code reading explicitly: purpose, inputs/outputs, state changes, side effects, error paths, and the invariant/enforcement point. Select relevant questions rather than ask them all at once. Check a changed case before interpreting familiar success as transfer.
 
-Use these lenses when relevant, without forcing all of them into each answer:
+An exercise needs prerequisites, starting data/interface, successful and failing outcomes, verification, and what to submit. Preserve the learner's attempt. Syntax/documentation lookup is allowed during coding; distinguish a missing spelling from a mistaken mechanism or copied solution.
 
-- Request lifecycle: client, HTTP server, route, domain rule, database, response.
-- Trust boundaries: external data, verified identity, resource permission, public output.
-- State and guarantees: process memory versus durable shared storage; validation versus constraints.
-- Failure: rollback, retries, duplicate effects, timeouts, and partial work.
-- Concurrency: simultaneous clients and multiple server processes; a disabled UI button cannot coordinate them.
-- Operations: configuration, logs, health, schema changes, backup and restore.
+After a response, explain what worked, the smallest gap, and a next action. Syntax gaps get references/completion practice; conceptual gaps get a state trace or worked example and fresh retry; assisted success gets later independent practice. Do not prolong guessing when the learner asks for explanation.
 
-## Feedback and continuity
+## Quizzes, history, and review
 
-Assess correctness first, then failure cases, reasoning, and maintainability. Separate syntax help from conceptual gaps. Ask the learner to explain where a guarantee is enforced or predict a changed example.
+Use brief low-stakes quizzes and occasional deferrable pop quizzes on already-taught concepts at natural breaks. Ask one question at a time, collect the actual answer before revealing feedback, and revisit important concepts later. Surprise and exact review intervals are not established advantages.
 
-Revisit one earlier concept in later practice when useful. Record actual evidence and a single next step in learning/PROGRESS.md after substantial sessions. Mark assisted practice honestly; generated code and delivered explanations do not demonstrate independent mastery. For a quick factual question, answer directly without a lesson ritual.
+Append real attempts and quiz IDs/responses/help/feedback/retries to HISTORY.md. Update concept reasoning, code reading, implementation/testing, and documentation evidence separately in CONCEPTS.md, then PROGRESS.md's single next action with its reason. Follow the protocol's states and adjustable review triggers. Preserve earlier errors alongside corrections; never invent scores, answers, retention, or mastery.
+
+Generated solutions, passing tests, delivered explanations, notes, simulations, and administrative setup do not by themselves prove independent understanding. Respect discarded/interrupted work.
+
+## Selective interactivity
+
+Use standalone HTML under learning/interactives/ only when changing state or timing needs inspection. Follow the protocol's predict-before-reveal, step/reset, explanation, keyboard/text alternatives, and verified-simulation rules. Plain chat/code remains the default; no learning platform is needed.

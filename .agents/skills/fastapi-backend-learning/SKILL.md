@@ -39,3 +39,7 @@ Start with a synchronous route and synchronous database path. FastAPI runs norma
 For each feature, test meaningful HTTP behavior: successful operation, invalid input, missing resource, domain conflict, and access denial when identity is introduced. Assert status, public fields, and stored effects or absence of effects. Use PostgreSQL for database-specific guarantees. Separate request tests from domain tests, and test race conditions with overlapping connections.
 
 Finish by explaining a changed request or failure and recording only demonstrated learner evidence. Use the official FastAPI tutorial, response-model guide, and concurrency guide for the current implementation details.
+
+## Reading and adaptive assessment
+
+Follow learning/TEACHING.md. Read one route/dependency path and trace input, verified actor, permission, state changes, failure, and public output. Predict a changed request before running it. A missing API spelling gets a reference; a mistaken validation, authorization, or execution model gets a focused example and fresh retry. Record concepts, reading, implementation/testing, and documentation use separately; HTTP tests alone do not establish the learner's explanation or retention. Use timeline HTML only when it clarifies execution.

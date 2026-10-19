@@ -7,9 +7,11 @@ Your existing programming, architecture, and delivery experience lets us focus o
 
 - Confirmed pace: **6–10 hours per week**.
 - Suggested rhythm: four 90-minute sessions, plus an optional 2–4 hours for practice or consolidation.
-- Each session: recall the last result, build one small change, verify it, then explain what happened.
+- Each exchange targets one concept or coherent pair: read/predict, run, explain, modify, or build as useful. Give feedback before adding the next chunk.
 - Milestones are readiness checks, not weekly deadlines. Repeat or split a milestone when evidence warrants it.
-- Record demonstrated learning in [PROGRESS.md](PROGRESS.md); completing setup does not demonstrate mastery.
+- [PROGRESS.md](PROGRESS.md) shows the current step; [HISTORY.md](HISTORY.md) preserves attempts and quiz feedback; [CONCEPTS.md](CONCEPTS.md) holds evidence and the review queue.
+- Use [TEACHING.md](TEACHING.md) to adapt examples, support, order, and review. Preserve prerequisite/outcome goals and explain changes rather than silently replace the plan.
+- Syntax lookup is allowed. Practice concept retrieval and code reading; check transfer with changed requirements and later retrieval.
 
 ## One capstone: team equipment checkout
 
@@ -22,6 +24,7 @@ Keep the system to one application and one PostgreSQL database while learning th
 ## M1 — Python domain rules and the request lifecycle
 
 **Build:** Complete [Exercise 01: Python domain rules](../exercises/01-python-domain-rules/README.md).
+Start with the dashboard's small diagnostic; the interrupted/discarded lesson is not completed instruction or assessment.
 Start with checkout; after the first exercise, extend to return and availability behavior with focused tests.
 Practice modules, collections, mutability, exceptions, type hints, and a reproducible project environment.
 
@@ -31,6 +34,7 @@ Mark where untrusted input enters and where validation, identity, permissions, a
 Explain the difference between type hints and runtime validation, and between process memory and durable data.
 
 **Verify:** Tests cover successful checkout, duplicate checkout, return, and unknown equipment.
+Trace a small function, explain mutation/error paths, and revisit a changed case after a delay.
 Explain why the in-memory model cannot guarantee correctness across processes or concurrent requests.
 Fold this foundation work into the first learning sessions; do not repeat basic programming material.
 
@@ -44,6 +48,7 @@ Keep the first implementation synchronous so the execution model is easy to trac
 Describe which response fields clients may see and why response validation matters.
 
 **Verify:** Request-level tests cover valid input, invalid input, missing equipment, and unavailable equipment.
+Read an endpoint/dependency path and locate identity, rules, state changes, and public output.
 Demonstrate the API from a client and explain each response. Keep this exercise local.
 Before any service is exposed, apply the security controls appropriate to its access and data.
 
@@ -57,6 +62,7 @@ Practice joins, aggregates, foreign keys, nullability, uniqueness, indexes, and 
 Explain why checking a rule in application code does not make concurrent writes safe.
 
 **Verify:** Recreate a database from your schema and sample data; query availability and loan history.
+Predict query results and explain which constraint protects which invariant before running them.
 Show constraints rejecting invalid rows and explain an index using a representative query plan.
 Explore SQLite differences later, after PostgreSQL behavior is understood; do not assume interchangeability.
 
@@ -70,6 +76,7 @@ Use a synchronous database path initially; make connection, session, and transac
 Distinguish application objects, database rows, API models, and schema migrations.
 
 **Verify:** Data survives restarts; integration tests use PostgreSQL and isolate their data.
+Trace a write through SQL, commit, failure, and cleanup; diagnose a changed failure case.
 A fresh database reaches the current schema through migrations, and a failed operation leaves no partial change.
 Explain the SQL behind representative ORM reads and writes before adding abstraction.
 
@@ -83,6 +90,7 @@ Distinguish a transaction, isolation, locking, an invariant, and request idempot
 Explain which failures are safe to retry, and why retries need bounds and a clear contract.
 
 **Verify:** Concurrent checkout attempts result in exactly one active loan and a deliberate loser response.
+Predict an interleaving before an optional timeline activity; explain the deciding database operation.
 Inject a failure to demonstrate rollback. Repeat a request and prove it cannot create duplicate effects.
 Keep these tests as regression evidence when the persistence code changes.
 
@@ -96,6 +104,7 @@ Add appropriate secret handling, transport protection, and abuse controls before
 Describe credential handling, permission checks, and which response fields must remain private.
 
 **Verify:** Tests cover anonymous users, members, managers, and members of another team.
+Read an access check and construct a request exposing a missing permission boundary.
 Changing an equipment ID cannot bypass access checks; unauthorized writes cause no database changes.
 Review exposed routes and failure responses for accidental data or secret disclosure.
 
@@ -110,6 +119,7 @@ Describe what changes at an async boundary, including resource lifetime and canc
 Distinguish latency from throughput when comparing workloads and results.
 
 **Verify:** Demonstrate predictable responses when the database is unavailable or slow.
+Trace blocking/waiting; use an interactive timeline only if it clarifies the distinction.
 Compare representative concurrent requests before and after any async change; retain correctness tests.
 Explain the observed behavior without assuming that async automatically improves performance.
 
@@ -122,6 +132,7 @@ Define a migration procedure, backup policy, restore procedure, and a recoverabl
 Distinguish an application restart, deployment rollback, schema recovery, and database restoration.
 
 **Verify:** Deploy from a clean environment, run a smoke test, and investigate a deliberate failure.
+Read configuration, logs, and migration instructions to explain failure and recovery.
 Restore sample data into a separate database and verify both its contents and application behavior.
 Recheck authentication, authorization, concurrency, and secret handling in the deployed environment.
 

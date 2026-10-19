@@ -42,3 +42,7 @@ Verify concurrency with separate PostgreSQL connections and deliberately overlap
 Derive indexes from filters, joins, ordering, and uniqueness. Discuss read benefit, write/storage cost, and actual query plans. Foreign keys do not automatically create indexes on PostgreSQL's referencing columns. Distinguish query count problems from slow individual queries when introducing an ORM.
 
 Teach migrations as versioned changes to both schema and existing data. Check fresh creation and upgrades with representative old rows, including backfills and constraints. Explain release compatibility and recovery rather than assuming every migration can be safely reversed.
+
+## Reading and adaptive assessment
+
+Follow learning/TEACHING.md. Read a schema and small fixture, predict a query or rejected write, then explain its invariant and failure/concurrency path. Progress to generated SQL and query plans when prerequisites are established. Keep syntax lookup separate from relational reasoning. Use a worked table/transaction trace after a conceptual error, then a fresh case; passing one familiar query does not prove transfer. Record the four evidence dimensions and later review in the shared history/concept queue.

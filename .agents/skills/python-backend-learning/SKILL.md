@@ -35,3 +35,7 @@ Introduce async through waiting and the actual I/O library. Python async is not 
 Ask for a prediction, a short runnable experiment, and an explanation of the result. Specify data, expected values or exception behavior, and how to run the check. Use simple assertions initially and the project's chosen test runner once introduced. Include invalid input and repeated-call cases when relevant.
 
 Review whether the learner can identify the enforcing line, explain state lifetime, and change a rule independently. Consult learning/PROGRESS.md before assuming proficiency. Do not count assistant-generated solutions or simulated evaluations as learner evidence.
+
+## Reading and adaptive assessment
+
+Follow learning/TEACHING.md and the current concept queue. Read short functions before writing related changes: predict bindings/mutation, branches/errors, and return values, then explain why. Use a fresh input or nested-container case when appropriate to test the mental model. If only spelling is missing, keep the conceptual task and offer a reference; if execution is misunderstood, model a trace and retry. Record code reading, concepts, implementation/testing, and documentation use separately. Assistant-run examples are not learner evidence.
